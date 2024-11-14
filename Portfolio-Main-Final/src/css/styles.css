@@ -1,0 +1,351 @@
+/* Declaration of variables CSS */
+:root {
+    --colorPrimario: #f8f9fa;
+    --colorSecundario: #212529;
+    --colorTerciario: #0d6efd;
+    --colorFuente:#ffffff80;
+    --colorFuenteSecundario:#212529bf;
+    --colorTerciarioHover:#0a58ca;
+    --coloBoton:#198754;
+    --coloBotonHover:#146c43;
+
+    --separacion: 5rem; 
+
+    --fuentePrincipal: "Roboto", sans-serif;
+    --fuenteSecundaria: "Lato", sans-serif;;
+}
+
+/* General styles for the document HTML  */
+html {
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+/* Assures all elements use the same box-sizing */
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/* General styles for the body of document HTML */
+body {
+    font-family: var(--fuentePrincipal); 
+    font-size: 1.6rem; 
+    line-height: 1.5;
+}
+
+/* Styles for containers */
+.contenedor {
+    max-width: 120rem;
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* General styles for headers */
+h1, h2, h3 {
+    font-weight: 900;
+    font-family: var(--fuenteSecundaria);
+    color: var(--colorPrimario);
+    margin: 0;
+}
+
+h1 {
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+
+/* General styles for images */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Utilities class */
+.text-center {
+    text-align: center;
+}
+
+
+/* Code CSS for your project */
+
+/*: Styles for Section Navbar */
+.navbar {
+    background-color: var(--colorSecundario);
+}
+
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (width >= 768px) {
+    .contenedor {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+h1 {
+    margin: calc(var(--separacion) / 2) 0 0 0;
+}
+
+@media (width >= 768px) {
+    h1 {
+        margin: calc(var(--separacion) / 2);
+    }
+}
+
+.nav-links {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+.nav-links a {
+    color: var(--colorFuente);
+    text-decoration: none;
+    font-size: 1.6rem;
+    transition: color 0.3s ease;
+}
+.nav-links a:hover{
+    color: var(--colorPrimario);
+}
+
+
+/* Styles for Section Hero */
+
+.hero-section{
+    background-color: var(--colorSecundario);
+}
+
+.hero-text{
+    margin-top: calc(var(--separacion) / 2);
+}
+
+.hero-text p {
+    font-size: 1.5rem;
+    color: var(--colorFuente);
+    word-spacing: 0.2rem;
+}
+
+.hero-buttons{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: calc( var(--separacion) / 2);
+}
+
+.btn {
+    padding: 0.7rem;
+    text-decoration: none;
+    border-radius: 1rem;
+    font-size: 1.8rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--colorTerciario);
+    color: var(--colorPrimario);
+}
+.btn-primary:hover{
+    background-color:var(--colorTerciarioHover) ;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: white;
+    border: 0.2rem solid white;
+    transition: all 0.3s ease
+}
+.btn-secondary:hover{
+    background-color:var(--colorPrimario);
+    color:var(--colorSecundario);
+}
+
+.hero-image{
+    display: none;
+}
+
+@media (width >= 768px) {
+    .hero-image{
+        display: block;
+        width: 50rem;
+        margin-bottom: 1.5rem;
+    }
+    .hero-content{
+        max-width: 50%;
+    }
+    h2{
+        font-size: 4.5rem;
+    }
+    .hero-text p {
+        margin: var(--separacion) 0;
+        font-size: 2rem;
+        text-align: left;
+    }
+    .hero-buttons{
+        justify-content: start;
+    }
+}
+
+
+/* Styles for Section Projects */
+.projects-section h3, 
+.projects-section p{
+    color: var(--colorSecundario);
+}
+
+h3{
+    font-size: 3.5rem;
+    margin-top: calc(var(--separacion) /2);
+}
+
+.projects-section p{
+    font-size: 1.5rem;
+    color: var(--colorFuenteSecundario);
+}
+
+
+.card {
+    border: 1px solid #dee2e6;
+    border-radius: 1.5rem 1.5rem 0 0;
+    box-shadow: 0 0.9rem 2rem rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+@media (width >= 768px) {
+
+    .projects-section > p{
+        font-size: 1.8rem;
+    }
+    .projects{
+        display: flex;
+        gap: 2rem;
+        flex-wrap: wrap;
+    }
+    .card{
+        flex: 1 1 30rem;
+    }
+
+    .card img {
+        width: 100%;
+        height: 25rem;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+    .card img:hover {
+        transform: scale(1.1);
+    }
+}
+
+.badge {
+    background-color: var(--colorFuenteSecundario);
+    color: var(--colorPrimario);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+h4{
+    font-size: 2rem;
+    margin-bottom: 0;
+}
+
+.project-buttons{
+    display: flex;
+    justify-content: space-between;
+}
+.btn-github{
+    background-color: var(--colorTerciarioHover);
+}
+.btn-demo{
+    background-color: var(--coloBotonHover);
+}
+
+
+
+/* Styles for Section Newsletter */
+.newsletter-content{
+    background-color: var(--colorTerciario);
+    border-radius: 0.5rem;
+    color: var(--colorPrimario);
+    padding: 5rem 2rem;
+    margin: 3rem 0;
+}
+
+@media (width >= 768px) {
+    .newsletter-content{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.title{
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.subtitle, .privacy-text {
+    color: var(--colorFuente);
+    font-size: 1.5rem;
+}
+
+.input-group{
+    margin-top: 3rem;
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+
+@media (width >= 768px) {
+    .input-group{
+        margin-top: 0;
+    }
+}
+
+.form-control {
+    padding-left: 1rem;
+    border-radius: 0.5rem 0 0 0.5rem;
+    border: none;
+    flex: 1;
+}
+.form-control:focus{
+    outline: none;
+}
+
+.button-newsletter{
+    padding: 1rem;
+    border-radius: 0 0.5rem 0.5rem 0;
+    border: none;
+    background-color: var(--coloBoton);
+    color: var(--colorPrimario);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.button-newsletter:hover{
+    background-color: var(--coloBotonHover);
+}
+
+
+
+/* Styles for Section Footer */
+footer{
+    background-color: var(--colorSecundario);
+    color: var(--colorFuente);
+}
